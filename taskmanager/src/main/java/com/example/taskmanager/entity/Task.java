@@ -17,17 +17,17 @@ public class Task {
 
     private boolean completed = false;
 
-    // 创建时间
+ 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    // 自动生成创建时间
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
     }
 
-    // getters & setters
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -43,3 +43,4 @@ public class Task {
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }
+
