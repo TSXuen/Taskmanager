@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    // 注册
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         if(userRepository.existsByUsername(user.getUsername()))
@@ -28,7 +28,7 @@ public class UserController {
         return ResponseEntity.ok(Map.of("success", true, "message", "User registered successfully"));
     }
 
-    // 登录
+
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody Map<String,String> loginData){
         String usernameOrEmail = loginData.get("usernameOrEmail");
@@ -41,3 +41,4 @@ public class UserController {
         return ResponseEntity.ok(Map.of("success", true, "message", "Login successful", "user", user));
     }
 }
+
