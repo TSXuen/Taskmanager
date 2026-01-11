@@ -32,7 +32,6 @@
 <script>
 const api="http://localhost:8081/api/tasks";
 
-// 格式化日期 DD/MM/YYYY HH:MM:SS
 function formatDate(datetime) {
     const d = new Date(datetime);
     const year = d.getFullYear();
@@ -97,8 +96,8 @@ async function deleteTask(id){
   fetchTasks();
 }
 
-// 页面加载时获取任务
 fetchTasks();
 </script>
 </body>
 </html>
+
