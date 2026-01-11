@@ -81,7 +81,6 @@ form.addEventListener("submit", async function(e) {
     if(result.success){
       messageDiv.style.color="green";
       messageDiv.innerText = result.message;
-      // 保存登录用户信息 (简单示例)
       localStorage.setItem("user", JSON.stringify(result.user));
       setTimeout(()=>{ window.location.href="tasks.html"; }, 500);
     } else {
@@ -97,3 +96,4 @@ form.addEventListener("submit", async function(e) {
 </script>
 </body>
 </html>
+
