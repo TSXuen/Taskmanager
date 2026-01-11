@@ -17,19 +17,19 @@ public class TaskController {
     @Autowired
     private TaskRepository taskRepository;
 
-    // 获取所有任务
+
     @GetMapping
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
-    // 创建任务
+
     @PostMapping
     public Task createTask(@RequestBody Task task) {
         return taskRepository.save(task);
     }
 
-    // 更新任务
+
     @PutMapping("/{id}")
     public ResponseEntity<?> updateTask(@PathVariable Long id, @RequestBody Task taskDetails) {
         Optional<Task> taskOpt = taskRepository.findById(id);
@@ -50,7 +50,7 @@ public class TaskController {
         return ResponseEntity.ok(task);
     }
 
-    // 删除任务
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteTask(@PathVariable Long id) {
         if (!taskRepository.existsById(id))
@@ -59,3 +59,4 @@ public class TaskController {
         return ResponseEntity.ok("Task deleted");
     }
 }
+
